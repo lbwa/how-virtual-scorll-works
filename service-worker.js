@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/how-virtual-scroll-works/precache-manifest.7ff9dd3662745cd8e638b117df4fb008.js"
+  "/how-virtual-scroll-works/precache-manifest.cef3bcc6931615db262c57746941894f.js"
 );
 
 self.addEventListener('message', (event) => {
