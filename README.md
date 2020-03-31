@@ -2,9 +2,13 @@
 
 This project is used to describe how virtual scroll works.
 
-- Why use virtual scroll?
+- Why we use virtual scroll?
 
-- Reduce DOM node memory usage significantly.
+- Reduce DOM nodes memory usage significantly.
+
+## Core
+
+The key is how to calculate visible elements and simulate scrolling virtually.
 
 ## License
 

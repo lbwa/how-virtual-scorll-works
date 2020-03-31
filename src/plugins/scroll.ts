@@ -52,7 +52,7 @@ export function createScrollLayout(
 }
 
 /**
- * calculate the first element should offset distance
+ * calculate distance all children element should offset
  */
 export function createItemLayout(
   offset: number,
