@@ -48,7 +48,7 @@ export function createScrollLayout(
     }
   }
 
-  throw new TypeError(`Unexpected layout, we got ${direction}`)
+  throw new TypeError(`Unexpected direction, we got ${direction}`)
 }
 
 /**
@@ -87,6 +87,7 @@ export function useHorizontalScroll<E extends HTMLElement = HTMLElement>() {
     requestAnimationFrame(() => setScrollLeft(offset))
   }
 
+  // set initial scroll bar position
   useEffect(() => {
     const scrollContainer = ref.current
     if (!scrollContainer)

@@ -4,7 +4,7 @@ import classes from './App.module.sass'
 // How does scrolling area scroll virtually
 import FirstElement from '../components/FirstElement'
 // How does element scroll virtually
-import MultipleElements from '../components/MultipleElements'
+import FixedSizeElements from '../components/FixedSizeElements'
 import Item from '../components/Item'
 
 const Sample: React.FC<{ title: string }> = ({ title, children }) => (
@@ -36,12 +36,12 @@ function App() {
           <FirstElement width={500} height={100} size={90} count={100} />
         </Sample>
 
-        <Sample title="Horizontal virtual scroll">
-          <MultipleElements
+        <Sample title="Horizontal virtual scroll with fixed size children">
+          <FixedSizeElements
             width={500}
             height={100}
             size={90}
-            count={100}
+            count={1000}
             render={Item}
           />
         </Sample>

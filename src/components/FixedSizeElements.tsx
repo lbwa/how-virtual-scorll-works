@@ -9,7 +9,7 @@ import {
 
 const direction = Direction.horizon
 
-const MultipleElements: React.FC<{
+const FixedSizeElements: React.FC<{
   width: number
   height: number
   size: number
@@ -25,28 +25,37 @@ const MultipleElements: React.FC<{
   // first visible element
   const visibleOffset = firstVisibleNodeIndex * size
 
-  // How many items
-  const numbersOfVisibleNodes = useMemo(() => {
-    const numbers = Math.ceil(width / size)
-    return numbers + (firstVisibleNodeIndex + numbers <= size ? 1 : 0)
-  }, [firstVisibleNodeIndex, size, width])
+  // How many expected visible nodes
+  const numbersOfVisibleNodes = useMemo(
+    () =>
+      Math.ceil(width / size) +
+      1 /* 1 extra padding node for scrolling to right */,
+    [size, width]
+  )
 
-  // all visible child items
+  // How many actual visible nodes
+  const actualNumbersOfVisibleNodes = useMemo(
+    // avoid visible nodes exceed the entire count
+    () => Math.min(numbersOfVisibleNodes, count - firstVisibleNodeIndex),
+    [count, firstVisibleNodeIndex, numbersOfVisibleNodes]
+  )
+
+  // all visible child nodes
   const childrenQueue: React.ComponentType<any>[] = useMemo(
-    () => new Array(numbersOfVisibleNodes).fill(render),
-    [numbersOfVisibleNodes, render]
+    () => new Array(actualNumbersOfVisibleNodes).fill(render),
+    [actualNumbersOfVisibleNodes, render]
   )
   return (
     <div
       style={createViewportLayout(width, height)}
       onScroll={onscroll}
       ref={ref}
-      className="v-mul-element__viewport"
+      className="v-mul-fixed-element__viewport"
     >
       {/* scroll area: render original scroll area size for correct scrollbar size */}
       <div
         style={createScrollLayout(size, count, direction)}
-        className="v-mul-element__scroll"
+        className="v-mul-fixed-element__scroll"
       >
         {childrenQueue.map((Children, index) => (
           <Children
@@ -60,4 +69,4 @@ const MultipleElements: React.FC<{
   )
 }
 
-export default MultipleElements
+export default FixedSizeElements
