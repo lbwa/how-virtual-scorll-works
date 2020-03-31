@@ -1,3 +1,15 @@
 .container
-  &:nth-child(2n + 1)
-    background-color: #eeeeee
+  display: inline-block
+  text-align: center
+  
+  &:nth-child(n + 1)
+    border-left: 1px solid #eeeeee
+
+  &:last-child
+    border-right: 1px solid #eeeeee
+
+.text
+  display: inline-block
+  background-color: #0366d6
+  width: 100%
+  color: white

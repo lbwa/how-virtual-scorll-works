@@ -3,6 +3,9 @@ import classes from './App.module.sass'
 
 // How does scrolling area scroll virtually
 import FirstElement from '../components/FirstElement'
+// How does element scroll virtually
+import MultipleElements from '../components/MultipleElements'
+import Item from '../components/Item'
 
 const Sample: React.FC<{ title: string }> = ({ title, children }) => (
   <div className={classes.sample}>
@@ -31,6 +34,16 @@ function App() {
       <div className={classes.body}>
         <Sample title="How does scrolling area scroll virtually">
           <FirstElement width={500} height={100} size={90} count={100} />
+        </Sample>
+
+        <Sample title="Horizontal virtual scroll">
+          <MultipleElements
+            width={500}
+            height={100}
+            size={90}
+            count={100}
+            render={Item}
+          />
         </Sample>
       </div>
 

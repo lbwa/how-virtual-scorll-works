@@ -31,12 +31,12 @@ const SingleElement: React.FC<{
       style={createViewportLayout(width, height)}
       onScroll={onscroll}
       ref={ref}
-      className="v-single-element__viewport"
+      className="v-first-element__viewport"
     >
-      {/* scroll area */}
+      {/* scroll area: render original scroll area size for correct scrollbar size */}
       <div
         style={createScrollLayout(size, count, direction)}
-        className="v-single-element__scroll"
+        className="v-first-element__scroll"
       >
         {/* single child element */}
         <Item index={-1} style={createItemLayout(offset, size, direction)}>

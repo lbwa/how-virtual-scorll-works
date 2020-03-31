@@ -13,7 +13,7 @@ const Item: React.FC<{
       style={style}
       className={classnames('v-item', classes.container)}
     >
-      index: {index}
+      <span className={classes.text}>index: {index}</span>
     </div>
   )
 }

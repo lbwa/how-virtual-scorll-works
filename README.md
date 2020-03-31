@@ -2,6 +2,10 @@
 
 This project is used to describe how virtual scroll works.
 
+- Why use virtual scroll?
+
+- Reduce DOM node memory usage significantly.
+
 ## License
 
 MIT © [Bowen Liu](https://set.sh)
