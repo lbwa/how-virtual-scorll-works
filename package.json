@@ -2,6 +2,21 @@
   "name": "how-virtual-scroll-works",
   "version": "0.1.0",
   "private": true,
+  "description": "How virtual scroll works",
+  "main": "src/index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbwa/how-virtual-scroll-works.git"
+  },
+  "keywords": [
+    "virtual-scroll"
+  ],
+  "author": "Bowen <devto@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lbwa/how-virtual-scroll-works/issues"
+  },
+  "homepage": "https://lbwa.github.io/how-virtual-scroll-works",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
