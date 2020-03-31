@@ -39,7 +39,7 @@ const SingleElement: React.FC<{
         className="v-single-element__scroll"
       >
         {/* single child element */}
-        <Item index={0} style={createItemLayout(offset, size, direction)}>
+        <Item index={-1} style={createItemLayout(offset, size, direction)}>
           items
         </Item>
       </div>

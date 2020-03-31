@@ -5,6 +5,11 @@ export enum Direction {
   horizon = 'horizon'
 }
 
+/**
+ * calculate visible area size
+ * @param viewportWidth viewport width
+ * @param viewportHeight viewport height
+ */
 export function createViewportLayout(
   viewportWidth: number,
   viewportHeight: number
@@ -17,28 +22,38 @@ export function createViewportLayout(
   }
 }
 
+/**
+ * calculate the entire scrolling area size, on the other hand, it's sum size of
+ * all elements
+ * @param size single element size
+ * @param itemsCount numbers of all items
+ * @param direction vertical or horizontal scrolling
+ */
 export function createScrollLayout(
   size: number,
   itemsCount: number,
-  layout: Direction
+  direction: Direction
 ): React.CSSProperties {
-  if (layout === Direction.horizon) {
+  if (direction === Direction.horizon) {
     return {
       width: size * itemsCount + 'px',
       height: '100%'
     }
   }
 
-  if (layout === Direction.vertical) {
+  if (direction === Direction.vertical) {
     return {
       width: '100%',
       height: size * itemsCount + 'px'
     }
   }
 
-  throw new TypeError(`Unexpected layout, we got ${layout}`)
+  throw new TypeError(`Unexpected layout, we got ${direction}`)
 }
 
+/**
+ * calculate the first element should offset distance
+ */
 export function createItemLayout(
   offset: number,
   size: number,
@@ -55,6 +70,7 @@ export function createItemLayout(
   return {
     [sizeType]: size,
     [subSizeType]: '100%',
+    // transform would occur GPU rendering (better rendering performance)
     transform: `translate${translateType}(${offset}px)`
   }
 }

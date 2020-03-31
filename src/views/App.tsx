@@ -1,7 +1,8 @@
 import React from 'react'
 import classes from './App.module.sass'
 
-import SingleElement from '../components/SingleElement'
+// How does scrolling area scroll virtually
+import FirstElement from '../components/FirstElement'
 
 const Sample: React.FC<{ title: string }> = ({ title, children }) => (
   <div className={classes.sample}>
@@ -28,8 +29,8 @@ function App() {
 
       {/* body */}
       <div className={classes.body}>
-        <Sample title="Single element with horizontal scroll">
-          <SingleElement width={500} height={100} size={90} count={100} />
+        <Sample title="How does scrolling area scroll virtually">
+          <FirstElement width={500} height={100} size={90} count={100} />
         </Sample>
       </div>
 
