@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/lbwa/how-virtual-scroll-works/issues"
   },
-  "homepage": "https://lbwa.github.io/how-virtual-scroll-works",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

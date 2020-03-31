@@ -25,8 +25,8 @@ const SingleElement: React.FC<{
   // first visible element
   const offset = startNodeIndex * size
 
+  // viewport
   return (
-    // viewport
     <div
       style={createViewportLayout(width, height)}
       onScroll={onscroll}
